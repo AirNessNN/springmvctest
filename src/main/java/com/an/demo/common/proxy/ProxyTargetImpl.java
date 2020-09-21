@@ -1,4 +1,4 @@
-package com.an.demo.common.reflect;
+package com.an.demo.common.proxy;
 
 /**
  * @author Airness
@@ -6,7 +6,7 @@ package com.an.demo.common.reflect;
  * @date 2020/9/18 3:16 下午
  * @description
  */
-public class ReflectTargetImpl implements ReflectTarget{
+public class ProxyTargetImpl implements ProxyTarget {
 
 
     @Override

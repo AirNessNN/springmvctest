@@ -1,4 +1,4 @@
-package com.an.demo;
+package com.an.demo.course;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -18,7 +18,7 @@ public class Test {
     }
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Class<?> tc = Class.forName("com.an.demo.Test");
+        Class<?> tc = Class.forName("com.an.demo.course.Test");
         Constructor<?> constructor=tc.getConstructor();
         Object instance = constructor.newInstance();
 
