@@ -1,7 +1,5 @@
 package com.an.demo.mybatis.test.common;
 
-import com.an.demo.mybatis.test.dao.RoleDao;
-import com.an.demo.mybatis.test.entity.RoleEntity;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,9 +14,18 @@ import java.io.InputStream;
  * @date 2020/9/21 4:19 下午
  * @description
  */
-public class MySqlSessionFactory {
+public class MySqlSessionFactory{
 
-    static SqlSessionFactory sessionFactory;
+    private SqlSessionFactory sessionFactory;
+
+
+    public MySqlSessionFactory(){
+        try {
+            init();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public void init() throws IOException {
@@ -36,14 +43,5 @@ public class MySqlSessionFactory {
             }
         }
         return sessionFactory.openSession();
-    }
-
-
-    public static void main(String[] args) {
-        MySqlSessionFactory factory = new MySqlSessionFactory();
-        SqlSession session = factory.getSession();
-        RoleDao roleDao = session.getMapper(RoleDao.class);
-        roleDao.insertRole(new RoleEntity(null, "管理员", "测试"));
-        session.commit();
     }
 }

@@ -1,6 +1,7 @@
 package com.an.demo.mybatis.test.dao;
 
 import com.an.demo.mybatis.test.entity.RoleEntity;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Airness
@@ -10,5 +11,6 @@ import com.an.demo.mybatis.test.entity.RoleEntity;
  */
 public interface RoleDao {
 
+    @Transactional
     int insertRole(RoleEntity entity);
 }
